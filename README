@@ -1,0 +1,42 @@
+# Parking Space Occupancy Detection
+
+Computer Vision coursework project by Leon Bytyqi and Noah Krapl.
+
+## Project overview
+
+The project aims to classify ten predefined parking spaces as free or occupied from images captured by one fixed parking-lot camera. It will investigate performance on dates not used during training and examine differences across available weather categories.
+
+## Current status
+
+This project is in setup. The repository currently contains a starter notebook with runtime diagnostics and a kernel smoke test. Dataset parsing, model training, evaluation, and demonstration outputs have not yet been implemented. No experimental results or performance claims are reported.
+
+## Planned approach
+
+- Use the PKLot dataset, initially investigating the UFPR04 camera view.
+- Inspect real images and XML annotations and verify the source label mapping before building the data pipeline.
+- Select ten fixed spaces and audit examples, annotations, and duplicate frames.
+- Keep all examples from a calendar date together in an approximately 60/20/20 train/validation/test split.
+- Compare a majority-class reference, a Canny edge-density baseline, and HOG features with a linear SVM.
+- Select model settings on validation data and reserve test data for the final frozen evaluation.
+- Report classification metrics, free-space-count error, runtime, and limitations using measured results only.
+
+These are planned methods, subject to the applicable course requirements.
+
+## Dataset
+
+The dataset is not included in this repository. Obtain PKLot from the [official dataset page](https://web.inf.ufpr.br/vri/databases/parking-lot-database/), review its usage terms and documentation, and configure the dataset path in the notebook's runtime. Preserve the original data and do not assume that connecting to Colab automatically uploads local files.
+
+## Run the starter notebook
+
+The intended workflow is VS Code with Google's official Colab extension and a remote Colab kernel:
+
+1. Clone or download this repository and open its folder in VS Code.
+2. Install the Google Colab extension by Google; install Jupyter if VS Code prompts you.
+3. Open `parking_occupancy.ipynb` and select **Select Kernel → Colab → Auto Connect**.
+4. Complete Google sign-in in the browser, return to VS Code, and run the notebook cells.
+
+The current notebook only checks the runtime environment and confirms that a cell can execute. A successful smoke test is not a model result. Dataset transfer, persistent storage, and model execution remain future setup and implementation work.
+
+## Scope and limitations
+
+The planned study concerns ten known regions in one camera view and new dates from that view. PKLot contains time-lapse imagery; this project will not claim continuous-video, night-time, real-time deployment, or performance on other cameras without separate evidence.
