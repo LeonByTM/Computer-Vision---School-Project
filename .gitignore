@@ -1,0 +1,6 @@
+# Keep Markdown planning files out of the public repository.
+*.md
+*.MD
+
+# This archive also contains the private Markdown planning files.
+/Parking_Occupancy_Project_Pack.zip
